@@ -1,13 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter as Router} from "react-router-dom"
+import {Switch, Route} from "react-router-dom"
+
+import './index.css';
+import Header from './Components/Header/Header'
+import Home from './Components/Body/Home/Home'
+
+import Footer from './Components/Footer/Footer'
+
+
+
+let hashHistory = Router.hashHistory;
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Router>
+    <Header/>
+    <Switch>
+      <Route path="/" component={Home}/>
+    </Switch>
+    <Footer/>
+  </Router>,
   document.getElementById('root')
 );
 
