@@ -1,12 +1,13 @@
 import Body from '../Body'
 
-const Home = () => 
+const Menu = () => 
 {
   return (
       <Body>
-          <h1>Home</h1>
+          <h1>Menu</h1>
       </Body>
   )
 }
 
-export default Home
+export default Menu
+
