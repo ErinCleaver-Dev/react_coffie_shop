@@ -12,9 +12,9 @@ export default class Navbar extends Component {
 
     state = {
         isHidden: true,
+        windowSize: 1024,
     }
-
-
+  
     showHidden = () => {
         console.log(this.state.isHidden)
         this.setState({ 
@@ -22,7 +22,23 @@ export default class Navbar extends Component {
         })
     }
 
+    hammburger = () => {
+        let visable = 'show_hammberg'
+        if(this.state.isHidden) {
+            visable = ' hidden' 
+        } else {
+            visable = 'show_hammberg'
+        }
+
+        return visable
+    }
+
+
+
+   
     render() {
+       
+    
         return (
             <div className="navbar_container">
                 <Link className="home_page" to="/"><img className="logo" src={logo}/></Link>
@@ -31,9 +47,13 @@ export default class Navbar extends Component {
                     <div><HiLocationMarker/></div>
                     <div onClick={this.showHidden} className="hamburger_button">{this.state.isHidden ? (<GiHamburgerMenu/>) : (<IoClose/>)}</div>
                 </div>
-                <div className={this.state.isHidden && window.innerWidth < 1025 ? ("hidden") : ("show")}>
+                <div className={this.visableNavBar()}>
                     <Nav/>
                 </div>
+                <div className="show">
+                    <Nav/>
+                </div>
+
             </div>
         )
     }

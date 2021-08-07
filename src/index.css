@@ -34,6 +34,11 @@ code {
   justify-content: space-between;
 }
 
+
+  .home_page {
+ 
+    margin-left: 10px;
+  }
 img.logo {
   height: 50px;
   padding: 3px;
@@ -54,7 +59,7 @@ img.logo {
   position: relative;
 }
 
-.show {
+.show_hammberg {
   background-color: blue;
   color: white;
   position: absolute;
@@ -113,6 +118,10 @@ img.logo {
   }
   .flex:hover {
     background-color: transparent;
+  }
+
+  .flex {
+    border-bottom: none;
   }
 
   .nav {
